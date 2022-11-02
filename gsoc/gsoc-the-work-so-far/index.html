@@ -1,0 +1,802 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>GSoC — The Work So Far | Tirthankar’s Blog</title>
+<meta name="description" content="In this blog post, I will discuss the work I have done so far, and what our future direction will be.">
+
+
+  <meta name="author" content="Tirthankar Mazumder">
+  
+  <meta property="article:author" content="Tirthankar Mazumder">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Tirthankar's Blog">
+<meta property="og:title" content="GSoC — The Work So Far">
+<meta property="og:url" content="https://wermos.github.io//blog/gsoc/gsoc-the-work-so-far/">
+
+
+  <meta property="og:description" content="In this blog post, I will discuss the work I have done so far, and what our future direction will be.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-08-31T10:46:37+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://wermos.github.io//blog/gsoc/gsoc-the-work-so-far/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Tirthankar Mazumder",
+      "url": "https://wermos.github.io//blog/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/blog/feed.xml" type="application/atom+xml" rel="alternate" title="Tirthankar's Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/blog/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- Chrome Favicons -->
+
+<link rel="icon" type="image/png" sizes="192x192" href=/blog/assets/icons/android-chrome-192x192.png>
+<link rel="icon" type="image/png" sizes="512x512" href=/blog/assets/icons/android-chrome-512x512.png>
+
+<!-- End Chrome Favicons -->
+
+<!-- Apple Favicons -->
+
+<link rel="apple-touch-icon" sizes="180x180" href=/blog/assets/icons/apple-touch-icon.png>
+<link rel="apple-touch-icon" sizes="180x180" href=/blog/assets/icons/apple-touch-icon-180x180.png>
+<link rel="apple-touch-icon" sizes="152x152" href=/blog/assets/icons/apple-touch-icon-152x152.png>
+<link rel="apple-touch-icon" sizes="120x120" href=/blog/assets/icons/apple-touch-icon-120x120.png>
+<link rel="apple-touch-icon" sizes="76x76" href=/blog/assets/icons/apple-touch-icon-76x76.png>
+<link rel="apple-touch-icon" sizes="60x60" href=/blog/assets/icons/apple-touch-icon-60x60.png>
+
+<!-- End Apple Favicons -->
+
+<!-- Classic Favicons -->
+
+<link rel="icon" type="image/png" sizes="32x32" href=/blog/favicon-32x32.png>
+<link rel="icon" type="image/png" sizes="16x16" href=/blog/favicon-16x16.png>
+<link rel="shortcut icon" href=/blog/favicon.ico>
+
+<!-- End Classic Favicons -->
+
+<link rel="manifest" href=/blog/site.webmanifest>
+
+<link rel="mask-icon" href=/blog/assets/icons/safari-pinned-tab.svg color="#5099d8">
+
+<meta name='msapplication-config' content=/blog/browserconfig.xml>
+
+<meta name="apple-mobile-web-app-title" content="Tirthankar's Blog">
+<meta name="application-name" content="Tirthankar's Blog">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/blog/">
+          Tirthankar's Blog
+          <span class="site-subtitle">My own little place on the internet.</span>
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Tirthankar Mazumder</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>I don’t know what to write here so I’ll keep it blank for now.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Maharasthra, India</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://github.com/wermos" rel="noopener noreferrer" target="_blank"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:mztirthankar@gmail.com">
+            <meta itemprop="email" content="mztirthankar@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="GSoC — The Work So Far">
+    <meta itemprop="description" content="In this blog post, I will discuss the work I have done so far, and what our future direction will be.">
+    <meta itemprop="datePublished" content="2022-08-31T10:46:37+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">GSoC — The Work So Far
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title">
+<i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li>
+<a href="#fast-55">Fast 5×5</a><ul><li>
+<a href="#my-changes-to-fast-55">My Changes to Fast 5×5</a><ul>
+<li><a href="#installed-vs-vendored-libraries">Installed vs. Vendored Libraries</a></li>
+<li><a href="#usrbintime-vs-google-benchmark">/usr/bin/time vs. Google Benchmark</a></li>
+<li><a href="#matrix-generation">Matrix Generation</a></li>
+</ul>
+</li></ul>
+</li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>In this blog post, I will discuss the work I have done so far, and what our future direction will be.</p>
+
+<h1 id="fast-55">Fast 5×5</h1>
+
+<p>In 2019, Hadrien worked with a Masters student to create <a href="https://gitlab.in2p3.fr/CodeursIntensifs/Fast5x5" target="_blank" rel="noopener noreferrer">Fast 5×5</a>, which was supposed to be a proof-of-concept demonstrating that the existing matrix routines in <code>Eigen</code> could be better optimized for small dimensions like 5×5.</p>
+
+<h2 id="my-changes-to-fast-55">My Changes to Fast 5×5</h2>
+
+<p>The first thing my mentors recommended doing was to take a closer look at the repository and understand where we stand with respect to the work to be done.</p>
+
+<p>After looking at <code>fast5x5.hpp</code> for a while, I decided that I should make some changes to make the benchmarking program faster and more reliable. So, I started making changes to the repository. I started off by removing the Docker stuff because I am not too familiar with it, and because it would not be necessary for the project.</p>
+
+<p>After making a few changes, it became apparent that I needed somewhere to push my changes to, so that it was available for everyone to see and use. However, because the original project was on Gitlab, I could not fork it the way projects on GitHub can be forked. Instead, I pushed my copy of the Gitlab repository onto GitHub, and made sure to point to the original URL in my repository description. The original repository can be found <a href="https://gitlab.in2p3.fr/CodeursIntensifs/Fast5x5" target="_blank" rel="noopener noreferrer">here</a>, and my fork can be found <a href="https://github.com/wermos/Fast5x5/" target="_blank" rel="noopener noreferrer">here</a>.</p>
+
+<h3 id="installed-vs-vendored-libraries">Installed vs. Vendored Libraries</h3>
+
+<p>Originally, the repository expected the user to have <code>Eigen</code> and <code>xsimd</code> installed. However, the existing <code>CMakeLists.txt</code> file downloaded Google Test from GitHub, thereby avoiding that library dependency.</p>
+
+<p>In order to minimize library dependencies and make it easier for other people to run the benchmarks, I removed the reliance on user installations and opted to “vendor” the libraries along with the project. Even though both Fast5×5 and <code>algebra-plugins</code> both used CMake to download dependencies from GitHub, I chose the Git submodule approach because I was more familiar with the latter at the time. I added <code>Eigen</code>, <code>xsimd</code>, and GoogleTest as Git sumbodules. Furthermore, all subsequent additions (like Google Benchmark, <code>blaze</code>, and <code>Fastor</code>) were added as submodules to Fast5×5.</p>
+
+<h3 id="usrbintime-vs-google-benchmark">
+<code>/usr/bin/time</code> vs. Google Benchmark</h3>
+
+<p>[[ start writing here. finish the /usr/bin/time vs google benchmark thing first. ]]</p>
+
+<p>the benchmarking script used <code>/usr/bin/time</code> to time the code. However, since the code that is being benchmarked runs very fast, a dedicated library like <a href="https://github.com/google/benchmark" target="_blank" rel="noopener noreferrer">Google Benchmark</a>.</p>
+
+<h3 id="matrix-generation">Matrix Generation</h3>
+
+<p>A key part of the benchmarking code is the random matrix generation. Doing this properly is essential because otherwise, the compiler might figure out the fact that we have pre-computed matrices. Once it does so, it is free to calculate the results ahead of time, which would defeat the point of the benchmark. The original Fast 5×5 code was using index-based operations to fill up the matrix, like so:</p>
+
+<figure class="highlight"><pre><code class="language-cpp">float a[SIZE * SIZE];
+float b[SIZE * SIZE];
+
+// the BaseMatrix data type in fast5x5.hpp has a constructor
+// that takes in C-style arrays. So, the code simply filled
+// up two arrays and then made two BaseMatrix objects out
+// of them.
+
+for (int i = 0; i &lt; SIZE; i++) {
+    for (int j = 0; j &lt; SIZE; j++) {
+        a[i * SIZE + j] = i + j;
+    }
+}
+
+for (int i = 0; i &lt; SIZE; i++) {
+    for (int j = 0; j &lt; SIZE; j++) {
+        float val;
+        if (i == 0 &amp;&amp; j == 1) val = -1;
+        else if (i == 1 &amp;&amp; j == 0) val = 1;
+        else if (i &gt; 1 &amp;&amp; i == j &amp;&amp; i % 2) val = -1;
+        else if (i &gt; 1 &amp;&amp; i == j &amp;&amp; !(i % 2)) val = 1;
+        else val = 0;
+        b[i * SIZE + j] = val;
+    }
+}</code></pre></figure>
+
+<p>I rewrote the matrix generation code using the random number generators in the <code>&lt;random&gt;</code> header, and mimicked <code>Eigen</code>’s <code>Random()</code> implementation, which generates a random float in the range [-1, 1]:</p>
+
+<figure class="highlight"><pre><code class="language-cpp">// random.hpp
+#include &lt;random&gt;
+#include &lt;limits&gt;
+
+inline float randomFloat(float min, float max) {
+    // Returns a random real in [min, max].
+    static std::uniform_real_distribution&lt;float&gt; distribution(
+        min, std::nextafter(max,
+            std::numeric_limits&lt;float&gt;::infinity()
+            )
+        );
+
+    static std::mt19937_64 generator;
+
+    return distribution(generator);
+}
+
+// this is the matrix generation code
+float a[SIZE * SIZE];
+
+for (int i = 0; i &lt; SIZE; i++) {
+    for (int j = 0; j &lt; SIZE; j++) {
+        a[i * SIZE + j] = randomFloat(-1.0, 1.0);
+    }
+}</code></pre></figure>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/blog/categories/#gsoc" class="page__taxonomy-item" rel="tag">gsoc</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-08-31T10:46:37+00:00">August 31, 2022</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=GSoC+---+The+Work+So+Far%20https%3A%2F%2Fwermos.github.io%2F%2Fblog%2Fgsoc%2Fgsoc-the-work-so-far%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwermos.github.io%2F%2Fblog%2Fgsoc%2Fgsoc-the-work-so-far%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwermos.github.io%2F%2Fblog%2Fgsoc%2Fgsoc-the-work-so-far%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/blog/gsoc/gsoc-the-details-of-my-project/" class="pagination--pager" title="GSoC — The Details of My Project
+">Previous</a>
+    
+    
+      <a href="/blog/anime/naruto/naruto-detail/" class="pagination--pager" title="A Small Detail in Naruto Shippuuden: Sealing Jutsu
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Leave a comment</h4>
+      <section id="giscus-comments"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/anime/naruto/naruto-detail/" rel="permalink">A Small Detail in Naruto Shippuuden: Sealing Jutsu
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">This post is about a small detail I noticed while telling someone about an amazing scene in the show.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/gsoc/gsoc-the-details-of-my-project/" rel="permalink">GSoC — The Details of My Project
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">In this post, I will discuss what exactly my work is, and how it ties in to the ACTS project. I will also talk about my mentors and what it was like to work ...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/gsoc/gsoc-first-blog-post/" rel="permalink">GSoC — First Blog Post
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">This is my first GSoC blog post, where I talk about what GSoC is, what organization I am working with, and what the software project I am working on actually...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<div class="search-searchbar"></div>
+  <div class="search-hits"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/wermos" rel="noopener noreferrer" target="_blank"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/blog/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2022 Tirthankar Mazumder. Powered by <a href="https://jekyllrb.com" rel="noopener noreferrer" target="_blank">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="noopener noreferrer" target="_blank">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/blog/assets/js/main.min.js"></script>
+
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: 'IAFKFFWNO2',
+  apiKey: '1822efaff6c7c7bcdacef47f8411167b',
+  indexName: 'blog',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <div class="list__item">
+      <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+        <h2 class="archive__item-title" itemprop="headline"><a href="/blog${url}">${title}</a></h2>
+        <div class="archive__item-excerpt" itemprop="description">${content}</div>
+      </article>
+    </div>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate,
+      empty: 'No results',
+    }
+  })
+);
+
+// Starting the search only when toggle is clicked
+$(document).ready(function () {
+  $(".search__toggle").on("click", function() {
+    if(!search.started) {
+      search.start();
+    }
+  });
+});
+</script>
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'wermos/blog');
+    script.setAttribute('data-repo-id', 'R_kgDOH0ZkXg');
+    script.setAttribute('data-category', 'Announcements');
+    script.setAttribute('data-category-id', 'DIC_kwDOH0ZkXs4CSNuD');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'transparent_dark');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+  
+
+
+
+
+<!-- MathJax stuff -->
+
+
+<!-- Code highlighter stuff, along with line numbering stuff -->
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai-sublime.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js"></script>
+
+<script>
+       hljs.highlightAll();
+       hljs.initLineNumbersOnLoad();
+</script>
+
+
+<!-- Scroll to Top Button -->
+<script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  backgroundColor: 'rgb(255, 133, 0)',
+  //backgroundColor: 'rgb(191, 191, 191)',
+  textColor: '#fff',
+  scrollDuration: 150
+})</script>
+
+
+  </body>
+</html>

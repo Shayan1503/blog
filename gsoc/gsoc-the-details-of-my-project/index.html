@@ -1,0 +1,787 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>GSoC — The Details of My Project | Tirthankar’s Blog</title>
+<meta name="description" content="In this post, I will discuss what exactly my work is, and how it ties in to the ACTS project. I will also talk about my mentors and what it was like to work with them.">
+
+
+  <meta name="author" content="Tirthankar Mazumder">
+  
+  <meta property="article:author" content="Tirthankar Mazumder">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Tirthankar's Blog">
+<meta property="og:title" content="GSoC — The Details of My Project">
+<meta property="og:url" content="https://wermos.github.io//blog/gsoc/gsoc-the-details-of-my-project/">
+
+
+  <meta property="og:description" content="In this post, I will discuss what exactly my work is, and how it ties in to the ACTS project. I will also talk about my mentors and what it was like to work with them.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-08-30T11:19:29+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://wermos.github.io//blog/gsoc/gsoc-the-details-of-my-project/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Tirthankar Mazumder",
+      "url": "https://wermos.github.io//blog/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/blog/feed.xml" type="application/atom+xml" rel="alternate" title="Tirthankar's Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/blog/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- Chrome Favicons -->
+
+<link rel="icon" type="image/png" sizes="192x192" href=/blog/assets/icons/android-chrome-192x192.png>
+<link rel="icon" type="image/png" sizes="512x512" href=/blog/assets/icons/android-chrome-512x512.png>
+
+<!-- End Chrome Favicons -->
+
+<!-- Apple Favicons -->
+
+<link rel="apple-touch-icon" sizes="180x180" href=/blog/assets/icons/apple-touch-icon.png>
+<link rel="apple-touch-icon" sizes="180x180" href=/blog/assets/icons/apple-touch-icon-180x180.png>
+<link rel="apple-touch-icon" sizes="152x152" href=/blog/assets/icons/apple-touch-icon-152x152.png>
+<link rel="apple-touch-icon" sizes="120x120" href=/blog/assets/icons/apple-touch-icon-120x120.png>
+<link rel="apple-touch-icon" sizes="76x76" href=/blog/assets/icons/apple-touch-icon-76x76.png>
+<link rel="apple-touch-icon" sizes="60x60" href=/blog/assets/icons/apple-touch-icon-60x60.png>
+
+<!-- End Apple Favicons -->
+
+<!-- Classic Favicons -->
+
+<link rel="icon" type="image/png" sizes="32x32" href=/blog/favicon-32x32.png>
+<link rel="icon" type="image/png" sizes="16x16" href=/blog/favicon-16x16.png>
+<link rel="shortcut icon" href=/blog/favicon.ico>
+
+<!-- End Classic Favicons -->
+
+<link rel="manifest" href=/blog/site.webmanifest>
+
+<link rel="mask-icon" href=/blog/assets/icons/safari-pinned-tab.svg color="#5099d8">
+
+<meta name='msapplication-config' content=/blog/browserconfig.xml>
+
+<meta name="apple-mobile-web-app-title" content="Tirthankar's Blog">
+<meta name="application-name" content="Tirthankar's Blog">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/blog/">
+          Tirthankar's Blog
+          <span class="site-subtitle">My own little place on the internet.</span>
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Tirthankar Mazumder</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>I don’t know what to write here so I’ll keep it blank for now.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Maharasthra, India</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://github.com/wermos" rel="noopener noreferrer" target="_blank"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:mztirthankar@gmail.com">
+            <meta itemprop="email" content="mztirthankar@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="GSoC — The Details of My Project">
+    <meta itemprop="description" content="In this post, I will discuss what exactly my work is, and how it ties in to the ACTS project. I will also talk about my mentors and what it was like to work with them.">
+    <meta itemprop="datePublished" content="2022-08-30T11:19:29+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">GSoC — The Details of My Project
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title">
+<i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu">
+<li>
+<a href="#project-description">Project Description</a><ul>
+<li>
+<a href="#alternate-project-description">Alternate Project Description</a><ul><li><a href="#my-project-proposal">My Project Proposal</a></li></ul>
+</li>
+<li><a href="#where-would-the-work-go">Where Would The Work Go?</a></li>
+</ul>
+</li>
+<li><a href="#weekly-meeting-schedule">Weekly Meeting Schedule</a></li>
+<li>
+<a href="#mentors">Mentors</a><ul>
+<li><a href="#joana-nierman">Joana Nierman</a></li>
+<li><a href="#hadrien-grasland">Hadrien Grasland</a></li>
+<li><a href="#paul-gessinger-befurt">Paul Gessinger-Befurt</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+          </aside>
+        
+        <p>In this post, I will discuss what exactly my work is, and how it ties in to the ACTS project. I will also talk about my mentors and what it was like to work with them.</p>
+
+<h1 id="project-description">Project Description</h1>
+
+<p>The original project description was:</p>
+<blockquote>
+  <p>We propose the development of a linear algebra plugin for ACTS, which makes use of explicit vectorization.</p>
+
+  <ul>
+    <li>Port a similar existing library implementation (<a href="https://gitlab.in2p3.fr/CodeursIntensifs/Fast5x5/" target="_blank" rel="noopener noreferrer">fast5x5</a>/<a href="https://github.com/xtensor-stack/xsimd" target="_blank" rel="noopener noreferrer">xsimd</a>) to a suitable library backend (can be decided upon together with the student).</li>
+    <li>Adapt the implementation to the linear algebra operations needed in the ACTS numerical integration for particle propagation.</li>
+    <li>Validate the approach and its performance and possibly optimize the performance further.</li>
+    <li>Given enough time, find a way to make the implementation available to ACTS as a compute backend and run it in ACTS example code.</li>
+  </ul>
+</blockquote>
+
+<p>The project, as described on the CERN-HSF webpage, can be found <a href="https://hepsoftwarefoundation.org/gsoc/2022/proposal_Acts-vectorized-LA-backend.html" target="_blank" rel="noopener noreferrer">here</a>.</p>
+
+<h2 id="alternate-project-description">Alternate Project Description</h2>
+
+<p>The above description might be a little terse for some. This is the way I like to explain it to others:</p>
+
+<p>CERN generates a lot of data from its LHC experiments. For this reason, they have a lot of software projects which are data analysis oriented. The ACTS project is one such software package which does track reconstruction.</p>
+
+<p>However, the people who work on the ACTS project noticed that the matrix libraries they were using were quite slow for small dimensions (like 4×4, 6×6, 6×8, and 8×8). Upon further investigation, it turned out that popular matrix libraries like <code>Eigen</code> and <code>SMatrix</code> are not well-optimized for these dimensions.</p>
+
+<p>Some time ago, an alternate implementation of 4×4 matrices and the related operations were written using a library called <a href="https://github.com/VcDevel/Vc" target="_blank" rel="noopener noreferrer"><code>Vc</code></a>, and it performed quite well in benchmarks at the time.</p>
+
+<p>My work is to continue this work and write implemenations for all these desired dimensions, so that the ACTS project’s routines run faster.</p>
+
+<p>I will go more into the details of the work and what we have accomplished so far in the next blog post. For now, I will discuss a bit about our weekly meeting schedule, and what it is like to work with my mentors.</p>
+
+<h3 id="my-project-proposal">My Project Proposal</h3>
+
+<p>My proposal can be found <a href="https://docs.google.com/document/d/1Ick3iDF_2bGbLiR-ZDGWnk06rrP64JBQG8Et4TccxRs/edit?usp=sharing" target="_blank" rel="noopener noreferrer">here</a>. The only change I suggested was to use <code>xsimd</code> instead of <code>Vc</code>, because the latter is not in active development anymore.</p>
+
+<h2 id="where-would-the-work-go">Where Would The Work Go?</h2>
+
+<p>The math code in the <a href="https://github.com/acts-project/acts" target="_blank" rel="noopener noreferrer">ACTS Project</a> proper is inextricably linked with the track-fitting code, so it would be a lot of work to change that.</p>
+
+<p>However, in the <a href="https://github.com/acts-project" target="_blank" rel="noopener noreferrer">ACTS project family</a>, there are two research repositories: <a href="https://github.com/acts-project/detray" target="_blank" rel="noopener noreferrer">detray</a> and <a href="https://github.com/acts-project/traccc" target="_blank" rel="noopener noreferrer">traccc</a>. These two repositories were started a couple of years after the original ACTS Project, so their approach to the math code is also slightly different. Both of these projects use another ACTS family project called <a href="https://github.com/acts-project/algebra-plugins" target="_blank" rel="noopener noreferrer"><code>algebra-plugins</code></a> as a layer of abstraction over the different functions that matrix libraries like <code>Eigen</code> and <code>SMatrix</code> provide. This allows the developers of these research repositories to easily switch between math backends and test them out.</p>
+
+<p>My work involves fleshing out the <a href="https://github.com/acts-project/algebra-plugins/tree/71ea1e814fae3020feedf6389c89a4ffac591bae/math/vc" target="_blank" rel="noopener noreferrer"><code>Vc</code> portion</a> of <code>algebra-plugins</code>, and adding all the functions which are present in the other math backends but not in the <code>Vc</code> stuff yet.</p>
+
+<h1 id="weekly-meeting-schedule">Weekly Meeting Schedule</h1>
+
+<p>We usually meet on Mondays at 10:00 am CEST (1:30 pm IST). Sometimes, we meet on other days, if the day is a holiday in some country, or one of us has other commitments.</p>
+
+<h1 id="mentors">Mentors</h1>
+
+<p>I have the pleasure of working with 3 highly qualified mentors. I will write a bit about each person:</p>
+
+<h2 id="joana-nierman">Joana Nierman</h2>
+
+<p>She is currently a PhD student in the <a href="https://www.uni-goettingen.de/en/1.html" target="_blank" rel="noopener noreferrer">University of Göttingen</a>.</p>
+
+<p>She was the first person I contacted, about my interest in working on this project for GSoC, so we have been corresponding since late March of this year. She is quite helpful in general. In our weekly meets, she regularly helps us set the direction for the week, and also helps with gathering more data by running the benchmarks I have written on other machines.</p>
+
+<h2 id="hadrien-grasland">Hadrien Grasland</h2>
+
+<p>Hadrien is a software engineer who works for the <a href="https://www.cnrs.fr/en" target="_blank" rel="noopener noreferrer">Centre National de la Recherche Scientifique</a> (CNRS).</p>
+
+<p>His knowledge of the nitty-gritty details of computer architecture and SIMD instruction sets is unparalleled. I am highly grateful to work with him, and I have learned a lot by working on this project with him, and discussing the assembly outputs of the different benchmarks I have written.</p>
+
+<p>In the early stages of the project, he was quite supportive of me adding other matrix library backends to our benchmarks, and seeing how they perform in comparison with Eigen and Fast 5×5.</p>
+
+<h2 id="paul-gessinger-befurt">Paul Gessinger-Befurt</h2>
+
+<p>He is the person who knows the most about ACTS project out of all three mentors. When we have any questions about anything related to the ACTS project, he is the person who helps us out.</p>
+
+<p>That’s all for this blog post! In the next one, I will discuss our results so far in detail, and what we plan on doing next.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/blog/categories/#gsoc" class="page__taxonomy-item" rel="tag">gsoc</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-08-30T11:19:29+00:00">August 30, 2022</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=GSoC+---+The+Details+of+My+Project%20https%3A%2F%2Fwermos.github.io%2F%2Fblog%2Fgsoc%2Fgsoc-the-details-of-my-project%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwermos.github.io%2F%2Fblog%2Fgsoc%2Fgsoc-the-details-of-my-project%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwermos.github.io%2F%2Fblog%2Fgsoc%2Fgsoc-the-details-of-my-project%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/blog/gsoc/gsoc-first-blog-post/" class="pagination--pager" title="GSoC — First Blog Post
+">Previous</a>
+    
+    
+      <a href="/blog/gsoc/gsoc-the-work-so-far/" class="pagination--pager" title="GSoC — The Work So Far
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Leave a comment</h4>
+      <section id="giscus-comments"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/anime/naruto/naruto-detail/" rel="permalink">A Small Detail in Naruto Shippuuden: Sealing Jutsu
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">This post is about a small detail I noticed while telling someone about an amazing scene in the show.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/gsoc/gsoc-the-work-so-far/" rel="permalink">GSoC — The Work So Far
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">In this blog post, I will discuss the work I have done so far, and what our future direction will be.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/gsoc/gsoc-first-blog-post/" rel="permalink">GSoC — First Blog Post
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">This is my first GSoC blog post, where I talk about what GSoC is, what organization I am working with, and what the software project I am working on actually...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<div class="search-searchbar"></div>
+  <div class="search-hits"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/wermos" rel="noopener noreferrer" target="_blank"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/blog/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2022 Tirthankar Mazumder. Powered by <a href="https://jekyllrb.com" rel="noopener noreferrer" target="_blank">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="noopener noreferrer" target="_blank">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/blog/assets/js/main.min.js"></script>
+
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: 'IAFKFFWNO2',
+  apiKey: '1822efaff6c7c7bcdacef47f8411167b',
+  indexName: 'blog',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <div class="list__item">
+      <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+        <h2 class="archive__item-title" itemprop="headline"><a href="/blog${url}">${title}</a></h2>
+        <div class="archive__item-excerpt" itemprop="description">${content}</div>
+      </article>
+    </div>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate,
+      empty: 'No results',
+    }
+  })
+);
+
+// Starting the search only when toggle is clicked
+$(document).ready(function () {
+  $(".search__toggle").on("click", function() {
+    if(!search.started) {
+      search.start();
+    }
+  });
+});
+</script>
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'wermos/blog');
+    script.setAttribute('data-repo-id', 'R_kgDOH0ZkXg');
+    script.setAttribute('data-category', 'Announcements');
+    script.setAttribute('data-category-id', 'DIC_kwDOH0ZkXs4CSNuD');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'transparent_dark');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+  
+
+
+
+
+<!-- MathJax stuff -->
+
+
+<!-- Code highlighter stuff, along with line numbering stuff -->
+
+
+<!-- Scroll to Top Button -->
+<script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  backgroundColor: 'rgb(255, 133, 0)',
+  //backgroundColor: 'rgb(191, 191, 191)',
+  textColor: '#fff',
+  scrollDuration: 150
+})</script>
+
+
+  </body>
+</html>
